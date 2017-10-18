@@ -41,11 +41,6 @@ const config = {
   },
   target: 'node',
   plugins: [
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify('production')
-      }
-    }),
     new webpack.optimize.OccurrenceOrderPlugin(true)
   ],
   externals: nodeModules

@@ -17,6 +17,17 @@ export const Resolvers = {
     Patients(_, args) {
       return patientLogic.allPatients(_)
     }
+  },
+  Mutation: {
+    createPatient(_, args) {
+      return patientLogic.addPatient(_, args)
+    },
+    deletePatient (_, args) {
+      return patientLogic.deletePatient(_, args)
+    },
+    updatePatient (_, args) {
+      return patientLogic.updatePatient(_, args)
+    }
   }
 }
 

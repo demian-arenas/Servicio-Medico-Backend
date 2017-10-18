@@ -19,8 +19,15 @@ export const Schema = [`
     Patients: [Patient]
   }
 
+  type Mutation {
+    createPatient(id: String!, name: String!, lastnames: String!, age: Int!, address: String!): Boolean
+    deletePatient(id: String!): Boolean
+    updatePatient(id: String!, name: String!, lastnames: String!, age: Int!, address: String!): Boolean
+  }
+
   schema {
     query: Query
+    mutation: Mutation
   }
 `];
 
