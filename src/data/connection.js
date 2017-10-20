@@ -1,13 +1,9 @@
 import { Database } from 'arangojs'
-const host = process.env.ARANGODB_HOST;
-const port = process.env.ARANGODB_PORT;
-const database = process.env.ARANGODB_DB;
-const username = process.env.ARANGODB_USERNAME;
-const password = process.env.ARANGODB_PASSWORD;
+import { env } from '../config'
 
 const db = new Database({
-  url: `http://${username}:${password}@${host}:${port}`,
-  databaseName: database
+  url: `http://${env.user.username}:${env.user.password}@${env.host}:${env.port}`,
+  databaseName: env.database
 })
 
 export default db
