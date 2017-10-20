@@ -1,5 +1,5 @@
 'use strict'
-import db from '../connection';
+import db from '../connection'
 
 const patientLogic = {
   replaceId (item) {
@@ -29,7 +29,7 @@ const patientLogic = {
   },
   async addPatient (_, args) {
     let exist = await this.patientById(_, args)
-    if (exist) {
+    if (!exist) {
       let patient = await db.query(`INSERT {
         _key: "${args.id}",
         age: ${args.age},
